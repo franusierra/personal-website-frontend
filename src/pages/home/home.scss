@@ -1,0 +1,90 @@
+@mixin small {
+  @media only screen and (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media only screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media only screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
+.home-section {
+  text-align: left;
+  background-color: #393939;
+  font-family: "Open Sans", sans-serif;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "face" "introduction";
+  min-height: 100vh;
+  width: 100vw;
+  padding-bottom: 200px;
+  @include small {
+    grid-template-areas: "face introduction";
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+  @include medium {
+    padding-bottom: 0;
+  }
+}
+.introduction-area {
+  grid-area: introduction;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 0 10%;
+  font-size:24px;
+  text-align: center;
+  align-self: start;
+  @include small{
+    align-self:center;
+    text-align: left;
+  }
+  @include medium{
+   
+    font-size: 54px;
+  }
+  .description {
+    display: block;
+    color: #8f8f8f;
+    justify-self: center;
+    align-self: center;
+    @include small{
+        align-self: start;
+    }
+    margin-bottom: 8px;
+  }
+  .cooltext {
+    grid-area: cooltext;
+    color: white;
+    justify-content: center;
+    align-self: center;
+    h2 {
+      width: fit-content;
+      background-color: rgb(31, 32, 32);
+    }
+    @include small{
+        align-self: start;
+    }
+    margin-top: 8px;
+  }
+}
+.picture-area {
+  grid-area: face;
+  padding: 0 10%;
+  @include small{
+    padding: 0 15%;
+  }
+  
+}
