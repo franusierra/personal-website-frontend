@@ -26,4 +26,4 @@ jobs:
       - name: Deploy app build to S3 bucket
         run: aws s3 sync ./build/ s3://${{ secrets.PERSONAL_WEBSITE_S3_BUCKET }} --delete
       - name: Invalidate cloudfront cache
-        run: aws cloudfront create-invalidation --distribution-id  ${{ secrets.PERSONAL_WEBSITE_CLOUDFRONT_DISTRIBUTION_ID }} 
+        run: aws cloudfront create-invalidation --distribution-id  ${{ secrets.PERSONAL_WEBSITE_CLOUDFRONT_DISTRIBUTION_ID }} --paths '/*'
