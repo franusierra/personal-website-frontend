@@ -29,10 +29,11 @@ a {
 }
 .scroll-animation{
   position: fixed;
-  bottom: 0;
+  bottom: 4vh;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 96px;
+  transform: translate(-50%, 0%);
+  height: 10vh;
+  width: 10vh;
 }
 .app {
   scroll-snap-type: y mandatory;
