@@ -12,7 +12,6 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     steps:
       - uses: actions/checkout@v2
-      # TODO: create tests and add to workflow
       - uses: actions/setup-node@v2
         with:
           node-version: '15.10.0'
@@ -22,4 +21,5 @@ jobs:
         with:
             folder: build
             bucket: ${{ secrets.PERSONAL_WEBSITE_S3_BUCKET }}
+            bucket-region: ${{ secrets.PERSONAL_WEBSITE_S3_BUCKET_REGION }}
             dist-id: ${{ secrets.PERSONAL_WEBSITE_CLOUDFRONT_DISTRIBUTION_ID }}
