@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { TimelineMax, TweenMax, Power0 } from "gsap/all";
 import { ReactSVG } from 'react-svg'
 import psychicsvg from './contact_image.svg'
