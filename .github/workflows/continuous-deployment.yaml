@@ -1,0 +1,23 @@
+name: CD
+on: 
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install # will run `yarn install` command
+      # TODO: create tests and add to workflow
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: build # will run `yarn build` comma
+      - uses: reggionick/s3-deploy@v3
+        with:
+            folder: build
+            bucket: ${{ secrets.PERSONAL_WEBSITE_S3_BUCKET }}
+            dist-id: ${{ secrets.PERSONAL_WEBSITE_CLOUDFRONT_DISTRIBUTION_ID }}
