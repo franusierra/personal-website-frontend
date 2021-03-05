@@ -10,24 +10,23 @@ import scrollAnimation from './res/scroll-down.json'
 function App() {
   let scrollTimer = useRef(null)
   const [scroll,setScroll] = useState(false)
+  const startScrollDelay=1000
+  const reappearScrollDelay=2000
   const handleScroll=(event)=>{
     
     if(scrollTimer.current){
       clearTimeout(scrollTimer.current)
       setScroll(false)
-      console.log("no hay scroll")
     }
     scrollTimer.current = setTimeout(() => {
       setScroll(true)
-      console.log("scrollea bro")
-    }, 3000);
+    }, startScrollDelay);
   }
   useEffect(() => {
     window.addEventListener('scroll',handleScroll,true)
     scrollTimer.current = setTimeout(() => {
       setScroll(true)
-      console.log("scrollea bro")
-    }, 1000);
+    }, reappearScrollDelay);
     return () =>{
       window.removeEventListener('scroll', handleScroll);
     }
