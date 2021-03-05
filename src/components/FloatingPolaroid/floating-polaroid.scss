@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
 .my-picture {
   position: relative;
   display: flex;
@@ -26,11 +27,11 @@
   position: absolute;
   display: block;
   width:    100%;
-  color: black;
+  color: #333333;
   z-index: 3;
-  bottom: 18%;
-  transform: rotate(4deg) translate(20%) scale(0.66,0.66);
-  
+  bottom: 17%;
+  transform: rotate(4deg) translate(26%) scale(0.75,0.75);
+  font-family: 'Delius', cursive;
 
 }
 
