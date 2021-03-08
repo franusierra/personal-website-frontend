@@ -1,6 +1,7 @@
 import React from 'react'
 import PsychicMe from '../../components/PsichicMe/psychic-me.js';
-import './index.css';
+import ContactForm from '../../components/ContactForm/contact-form.js';
+import './contact.scss';
 const contactpage=(props)=>{
     return(
         <section id={props.id} className="contact-section">
@@ -8,8 +9,7 @@ const contactpage=(props)=>{
             <PsychicMe/>
           </div>
           <div className="contact-area">
-            
-            
+            <ContactForm/>
           </div>
         </section>
     )

@@ -2,7 +2,7 @@ import React, {useEffect,useState,useRef}  from 'react';
 import './index.scss';
 import { hydrate } from "react-dom";
 import Home from "./pages/home/home.js"
-import Contact from "./pages/contact"
+import Contact from "./pages/contact/contact.js"
 import Lottie from "react-lottie"
 import scrollAnimation from './res/scroll-down.json'
 
