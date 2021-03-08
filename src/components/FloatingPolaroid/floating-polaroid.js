@@ -1,13 +1,15 @@
 import React from 'react'
 import './floating-polaroid.scss';
+import polaroid from './img/polaroid.png'
+
 var ReactFitText = require("react-fittext")
 const FloatingPicture=(props) =>{
     return (
         <div className="my-picture">
-            <img src={props.face_src}  className="my-face" alt="face" />
-            <img src={props.frame_src} className="my-frame" alt="frame" />
+            <img src={props.face}  className="my-face" alt="face" />
+            <img src={polaroid} className="my-frame" alt="frame" />
             <ReactFitText >
-                <h2 className="my-name">Fran Núñez</h2>
+                <h2 className="my-name">{props.name}</h2>
             </ReactFitText>
         </div>
     )

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { TimelineMax, TweenMax, Power0 } from "gsap/all";
+import { TimelineMax, TweenMax, Power0 } from "gsap";
 import { ReactSVG } from 'react-svg'
 import psychicsvg from './contact_image.svg'
 import "./psychic-me.scss"
