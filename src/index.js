@@ -7,7 +7,7 @@ import Lottie from "react-lottie"
 import scrollAnimation from './res/scroll-down.json'
 
 
-function App() {
+export default function App() {
   let scrollTimer = useRef(null)
   const [scroll,setScroll] = useState(false)
   const startScrollDelay=1000
@@ -46,7 +46,7 @@ function App() {
 
       <div className="app">
        
-       <Home/>
+      <Home/>
 
       <Contact id="section-5"/>
         
