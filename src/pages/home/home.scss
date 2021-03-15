@@ -16,10 +16,12 @@
   }
 }
 
+
 .home-section {
   text-align: left;
   background-color: #393939;
   font-family: "Open Sans", sans-serif;
+  font-style: bold;
   display: grid;
   align-items: center;
   justify-content: center;
@@ -54,11 +56,11 @@
   }
   @include medium{
    
-    font-size: 54px;
+    font-size: 64px;
   }
   .description {
     display: block;
-    color: #8f8f8f;
+    color: #DDD;
     justify-self: center;
     align-self: center;
     @include small{

@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "YoutubeStar";
+  src: url("../../res/fonts/youtube-star.ttf") format("truetype");
+}
+@mixin small {
+  @media only screen and (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media only screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media only screen and (min-width: 1440px) {
+    @content;
+  }
+}
+.about-section {
+  position: relative;
+  background-color: #60c6dc;
+  background-image: url("../../res/about-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "about";
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  box-sizing: border-box;
+  @include small {
+    grid-template-areas: "dinosaur about";
+    grid-template-rows: 1fr;
+    grid-template-columns: 5fr 6fr;
+  }
+  @include medium {
+    padding: 0;
+  }
+}
+
+.dinosaur-area {
+  z-index: 2;
+  position: absolute;
+  height: 30%;
+  width: 30%;
+  bottom: 0;
+  left: 0;
+  @include small {
+    position: relative;
+    height: 100%;
+    justify-self: start;
+    grid-area: dinosaur;
+    width: 100%;
+    align-self: end;
+  }
+  .dinosaur-svg {
+    position: absolute;
+    height: 90%;
+    bottom: 0;
+    left: 0;
+  }
+}
+.about-area {
+  height: 100%;
+  width: 100%;
+  font-size: 2em;
+  padding: 15vh 10vw;
+  @include small{
+    padding: 15vh 10vw 15vh 0;
+  }
+
+  grid-area: about;
+  box-sizing: border-box;
+}
