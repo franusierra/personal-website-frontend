@@ -9,7 +9,7 @@ import scrollAnimation from './res/scroll-down.json'
 import Navbar from './components/Navbar/navbar.js';
 import Skills from './pages/skills/skills';
 import Projects from './pages/projects/projects';
-
+import { use100vh } from 'react-div-100vh'
 
 export default function App() {
   let scrollTimer = useRef(null)
@@ -33,22 +33,11 @@ export default function App() {
     scrollTimer.current = setTimeout(() => {
       setScroll(true)
     }, reappearScrollDelay);
-    
-    function resetHeight(){
-      // reset the body height to that of the inner browser
-      let vh = window.innerHeight * 0.01;
-      // Then we set the value in the --vh custom property to the root of the document
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-    // reset the height whenever the window's resized
-    window.addEventListener("resize", resetHeight);
-    // called to initially set the height.
-    resetHeight();
     return () =>{
       window.removeEventListener('scroll', handleScroll);
     }
   },[])
-  
+  const sectionHeight=use100vh()
   
   const optionsScroll ={
     loop: true,
@@ -100,7 +89,12 @@ export default function App() {
         
         {navbarSections.map((section)=>{
           if(section.id===active)
-            return React.cloneElement(section.element,{isActive:true})
+            return React.cloneElement(section.element,{
+              isActive:true,
+              style: {
+                height: sectionHeight
+              }
+            })
           else
             return section.element
         })}
