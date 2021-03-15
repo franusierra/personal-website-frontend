@@ -12,8 +12,23 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '15.10.0'
-      - run: yarn install
-      - run: yarn test
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Test
+        run: yarn test
+        env:
+          CI: true
+      - name: Build
+        if: (github.ref == 'refs/heads/devel' || github.ref == 'refs/heads/master')
+        run: yarn build
+      - name: Share artifact inside workflow
+        if: (github.ref == 'refs/heads/devel' || github.ref == 'refs/heads/master')
+        uses: actions/upload-artifact@v1
+        with:
+          name: react-github-actions-build
+          path: build
+      
 
   deploy-dev:
     name: Deploy Develop
@@ -24,17 +39,11 @@ jobs:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     steps:
-      
-      - uses: actions/checkout@v2
-      
-      - uses: actions/setup-node@v2
+      - name: Get artifact
+        uses: actions/download-artifact@v1
         with:
-          node-version: '15.10.0'
-      
-      - run: yarn install
-      
-      - run: yarn build
-      
+          name: react-github-actions-build
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -54,16 +63,12 @@ jobs:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     steps:
-      
-      - uses: actions/checkout@v2
-      
-      - uses: actions/setup-node@v2
+    
+      - name: Get artifact
+        uses: actions/download-artifact@v1
         with:
-          node-version: '15.10.0'
-      
-      - run: yarn install
-      
-      - run: yarn build
+          name: react-github-actions-build
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
