@@ -1,0 +1,78 @@
+name: CI/CD
+on: [push]
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '15.10.0'
+      - run: yarn install
+      - run: yarn test
+
+  deploy-dev:
+    name: Deploy Develop
+    needs: test
+    if: github.ref == 'refs/heads/devel'
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    steps:
+      
+      - uses: actions/checkout@v2
+      
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '15.10.0'
+      
+      - run: yarn install
+      
+      - run: yarn build
+      
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_DEV }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_DEV }}
+          aws-region: ${{ secrets.PERSONAL_WEBSITE_S3_BUCKET_REGION_DEV }}
+      
+      - name: Deploy app build to S3 bucket
+        run: aws s3 sync ./build/ s3://${{ secrets.PERSONAL_WEBSITE_S3_BUCKET_DEV }} --delete
+        
+  deploy-prod:
+    name: Deploy Production
+    needs: test
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    steps:
+      
+      - uses: actions/checkout@v2
+      
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '15.10.0'
+      
+      - run: yarn install
+      
+      - run: yarn build
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.PERSONAL_WEBSITE_S3_BUCKET_REGION }}
+
+      - name: Deploy app build to S3 bucket
+        run: aws s3 sync ./build/ s3://${{ secrets.PERSONAL_WEBSITE_S3_BUCKET }} --delete
+      
+      - name: Invalidate cloudfront cache
+        run: aws cloudfront create-invalidation --distribution-id  ${{ secrets.PERSONAL_WEBSITE_CLOUDFRONT_DISTRIBUTION_ID }} --paths '/*'
