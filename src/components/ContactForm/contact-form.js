@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import './contact-form.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope,faBeer } from "@fortawesome/free-solid-svg-icons";

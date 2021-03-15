@@ -7,7 +7,6 @@ import Contact from "./pages/contact/contact.js"
 import Lottie from "react-lottie"
 import scrollAnimation from './res/scroll-down.json'
 import Navbar from './components/Navbar/navbar.js';
-import TrackVisibility from 'react-on-screen';
 import Skills from './pages/skills/skills';
 import Projects from './pages/projects/projects';
 
