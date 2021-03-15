@@ -28,7 +28,8 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "face" "introduction";
-  height: 100vh;
+  height: 100vh;  
+  max-height: -webkit-fill-available;
   width: 100vw;
   padding: 15vh 0;
   box-sizing: border-box;

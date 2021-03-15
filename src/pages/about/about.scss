@@ -33,6 +33,7 @@
   grid-template-areas: "about";
   height: 100vh;
   width: 100vw;
+  max-height: -webkit-fill-available;
   overflow: hidden;
   box-sizing: border-box;
   @include small {
