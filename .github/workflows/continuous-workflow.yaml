@@ -30,7 +30,7 @@ jobs:
         if: (github.ref == 'refs/heads/devel' || github.ref == 'refs/heads/master')
         uses: actions/upload-artifact@v1
         with:
-          name: react-github-actions-build
+          name: build
           path: build
       
 
