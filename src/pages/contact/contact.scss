@@ -26,7 +26,7 @@
     grid-template-rows: 1fr;
     grid-template-areas: "contactform";
     height: 100vh;
-    max-height: -webkit-fill-available;
+    height: calc(var(--vh, 1vh) * 100);
     width: 100vw;
     
     box-sizing: border-box;
