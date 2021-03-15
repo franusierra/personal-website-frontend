@@ -1,4 +1,4 @@
-import React, {useState}from 'react'
+import React from 'react'
 import './hanging-sign.scss';
 import rope from './vrope.png'
 const HangingSign=(props) =>{
