@@ -3,7 +3,7 @@ import './projects.scss';
 import WorkingMe from '../../components/WorkingMe/working-me';
 const Projects=(props)=>{
     return(
-        <section id={props.id} className="projects-section">
+        <section id={props.id} className="projects-section" style={{height:props.sectionHeight}}>
           <div className="working-area">
             <WorkingMe/>
           </div>

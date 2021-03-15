@@ -7,7 +7,7 @@ const homepage=(props)=>{
   
     
     return(
-        <section id={props.id} className="home-section">
+        <section id={props.id} className="home-section" style={{height:props.sectionHeight}}>
           <div className="picture-area">
             <FloatingPolaroid name="Fran Núñez"  face={face}/>
           </div>
