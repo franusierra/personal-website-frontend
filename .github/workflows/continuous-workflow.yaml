@@ -69,10 +69,10 @@ jobs:
     steps:
 
       - name: Get artifact
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v2
         with:
           name: build
-          path: build
+          path: ~/build
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -82,7 +82,7 @@ jobs:
           aws-region: ${{ secrets.PERSONAL_WEBSITE_S3_BUCKET_REGION }}
 
       - name: Deploy app build to S3 bucket
-        run: aws s3 sync ./build/ s3://${{ secrets.PERSONAL_WEBSITE_S3_BUCKET }} --delete
+        run: aws s3 sync ~/build/ s3://${{ secrets.PERSONAL_WEBSITE_S3_BUCKET }} --delete
       
       - name: Invalidate cloudfront cache
         run: aws cloudfront create-invalidation --distribution-id  ${{ secrets.PERSONAL_WEBSITE_CLOUDFRONT_DISTRIBUTION_ID }} --paths '/*'
