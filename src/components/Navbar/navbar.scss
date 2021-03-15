@@ -1,0 +1,168 @@
+header {
+  z-index: 800;
+  position: fixed;
+  width: 100%;
+  font-size: 3vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  @media only screen and (max-width: 800px) {
+    height: auto;
+    min-height: 80px;
+    padding: 0px;
+    display: block;
+  }
+  a {
+    opacity: 1;
+    margin: 8px;
+    transition: all 0.6s;
+    font-weight: semibold;
+    cursor: pointer;
+  }
+  a:hover {
+    opacity: 0.6;
+  }
+  .active {
+    transform-origin: 50% 50%;
+    transform: scale(1.1);
+  }
+
+  nav {
+    @media only screen and (max-width: 800px) {
+      padding: 0;
+    }
+
+    .fa-bars {
+      display: none;
+
+      @media only screen and (max-width: 800px) {
+        display: inline-block;
+        position: absolute;
+        top: 25px;
+        right: 15px;
+        cursor: pointer;
+        color: white;
+        z-index: 222;
+        font-size: 5vh;
+      }
+    }
+    .fa-times {
+      display: none;
+
+      @media only screen and (max-width: 800px) {
+        display: inline-block;
+        position: absolute;
+        top: 25px;
+        right: 15px;
+        cursor: pointer;
+        color: #222;
+        z-index: 222;
+        font-size: 5vh;
+      }
+    }
+
+    //  Responsive menu
+    ul.collapsed {
+      display: flex;
+      margin-right: 16px;
+      justify-content: space-evenly;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+      height: 100%;
+      width: fit-content;
+      ul.external-icons {
+        justify-content: center;
+        height: 100%;
+        align-items: center;
+        font-size: 5vh;
+        @media only screen and (max-width: 800px) {
+          font-size: 7vh;
+        }
+        display: flex;
+        li{
+          display: block;
+          height: 100%;
+         
+          flex:1;
+          align-items: center;
+          justify-content: center;
+          a {
+            display: block;
+            width: 32px;
+            color: inherit;
+            width: fit-content;
+            text-align: center;
+            text-decoration: inherit;
+            
+          }
+          div.curriculum {
+            display: block;
+            width: 5vh;
+            height: 5vh;
+            @media only screen and (max-width: 800px) {
+              width: 7vh;
+              height: 7vh;
+            }
+            svg{
+              height: 100%;
+              width: 100%;
+              fill: currentColor;
+            }
+          }
+        }
+        
+      }
+      @media only screen and (max-width: 800px) {
+        color: #222;
+        padding-top: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        overflow: hidden;
+        max-height: 0;
+        -moz-transition-duration: 0.3s;
+        -webkit-transition-duration: 0.3s;
+        -o-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
+        &.is-expanded {
+          background-color: #eee;
+          overflow: hidden;
+          max-height: 75vh; /* approximate max height */
+          -moz-transition-duration: 0.3s;
+          -webkit-transition-duration: 0.3s;
+          -o-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+          -moz-transition-timing-function: ease-in;
+          -webkit-transition-timing-function: ease-in;
+          -o-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+          padding-bottom: 8px;
+        }
+      }
+
+      a {
+        justify-content: space-between;
+
+        @media only screen and (max-width: 800px) {
+          padding: 0px;
+          display: block;
+          width: 100%;
+          padding: 8px 0;
+          cursor: pointer;
+
+          li {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

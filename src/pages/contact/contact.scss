@@ -1,0 +1,68 @@
+@mixin small {
+@media only screen and (min-width: 600px) {
+    @content;
+}
+}
+
+@mixin medium {
+@media only screen and (min-width: 1024px) {
+    @content;
+}
+}
+
+@mixin large {
+@media only screen and (min-width: 1440px) {
+    @content;
+}
+}
+.contact-section {
+    position:relative;
+    background-color: #597BBE;
+   
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "contactform";
+    height: 100vh;
+    width: 100vw;
+    
+    box-sizing: border-box;
+    @include small {
+        grid-template-areas: "psychic contactform";
+        grid-template-rows: 1fr;
+        grid-template-columns: 2fr 3fr;
+    }
+    @include medium {
+        padding: 0;
+    }
+    
+}
+
+.psychic-area{
+    position: absolute;
+    top:1%;
+    right:0;
+    padding: 0 10%;
+    width: 20%;
+    @include small{
+        position: relative;
+        justify-self: end;
+        grid-area: psychic;
+        width: 60%;
+        align-self: center;
+    }
+}
+.contact-area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    grid-area: contactform;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10%;
+    align-self: center;
+    justify-self:center;
+}

@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+
+@font-face {
+  font-family: 'FlippsRegular';
+  src: url('../../res/fonts/Fipps-Regular.otf') format('truetype'); 
+}
 .my-picture {
   position: relative;
   display: flex;
@@ -30,8 +34,10 @@
   color: #333333;
   z-index: 3;
   bottom: 17%;
-  transform: rotate(4deg) translate(26%) scale(0.75,0.75);
-  font-family: "Open Sans", sans-serif;
+  transform-origin: 50% 50%;
+  transform: rotate(4deg) translate(11%) scale(0.60,0.60);
+  font-family: 'FlippsRegular', cursive;
+
 
 }
 
