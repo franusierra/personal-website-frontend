@@ -17,8 +17,6 @@ body {
 }
 .app::-webkit-scrollbar {
   display: none;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
@@ -47,7 +45,6 @@ a {
 }
 .app section{
   scroll-snap-align: start;
-  
   
 }
 /* @import url('https://fonts.googleapis.com/css?family=Literata:400,400i,500,500i,600,600i,700,700i&display=swap'); */

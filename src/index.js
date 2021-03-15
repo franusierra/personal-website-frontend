@@ -37,7 +37,7 @@ export default function App() {
       window.removeEventListener('scroll', handleScroll);
     }
   },[])
-  const sectionHeight=use100vh()
+  const sectionHeight= use100vh()
   
   const optionsScroll ={
     loop: true,
@@ -53,7 +53,7 @@ export default function App() {
       content:"home.js"
     },
     {
-      element: <About name="about-section" id="about-section"/>,
+      element: <About name="about-section" id="about-section" />,
       id:"about-section",
       content:"about.sh"
     },
@@ -88,15 +88,11 @@ export default function App() {
         }}/>
         
         {navbarSections.map((section)=>{
-          if(section.id===active)
-            return React.cloneElement(section.element,{
-              isActive:true,
-              style: {
-                height: sectionHeight
-              }
-            })
-          else
-            return section.element
+          let isActive= (section.id===active)
+          return React.cloneElement(section.element,{
+              isActive:isActive,
+              sectionHeight:sectionHeight
+          })
         })}
         
         <div className="scroll-animation">
