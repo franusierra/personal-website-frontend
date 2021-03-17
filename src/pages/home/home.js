@@ -1,4 +1,5 @@
 import React from 'react'
+import Typist from 'react-typist';
 import FloatingPolaroid from '../../components/FloatingPolaroid/floating-polaroid.js'
 import face from '../../res/face.jpeg';
 import './home.scss';
@@ -17,7 +18,13 @@ const homepage=(props)=>{
               
             
             <div className="cooltext">
-              <h2>I solve problems;</h2>
+              <Typist cursor={{
+                hideWhenDone:true,
+                element: 'I',
+                blink: true
+              }}>
+                I solve problems;
+              </Typist>
             </div>
           </div>
           

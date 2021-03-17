@@ -52,7 +52,7 @@ export default function Navbar(props) {
               </a>
             </li>
             <li>
-              <a href="https://curriculum.franusi.com">
+              <a href="https://franusi.com/resume.pdf">
                 <ReactSVG  className="curriculum fLink" src={curriculum} />
               </a>
               

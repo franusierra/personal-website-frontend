@@ -44,8 +44,8 @@ a {
   scrollbar-width: none;  
 }
 .app section{
-  scroll-snap-align: start;
-  
+  scroll-snap-align: center;
+  min-height: 100vh;
 }
 /* @import url('https://fonts.googleapis.com/css?family=Literata:400,400i,500,500i,600,600i,700,700i&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css?family=Neuton:200,300,400,400i,700,800&display=swap'); */

@@ -8,6 +8,7 @@ const Projects=(props)=>{
             <WorkingMe/>
           </div>
           <div className="projects-area">
+            
           </div>
         </section>
     )

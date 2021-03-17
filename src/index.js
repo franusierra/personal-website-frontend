@@ -9,7 +9,6 @@ import scrollAnimation from './res/scroll-down.json'
 import Navbar from './components/Navbar/navbar.js';
 import Skills from './pages/skills/skills';
 import Projects from './pages/projects/projects';
-import { use100vh } from 'react-div-100vh'
 
 export default function App() {
   let scrollTimer = useRef(null)
@@ -37,7 +36,6 @@ export default function App() {
       window.removeEventListener('scroll', handleScroll);
     }
   },[])
-  const sectionHeight= use100vh()
   
   const optionsScroll ={
     loop: true,
@@ -90,8 +88,7 @@ export default function App() {
         {navbarSections.map((section)=>{
           let isActive= (section.id===active)
           return React.cloneElement(section.element,{
-              isActive:isActive,
-              sectionHeight:sectionHeight
+              isActive:isActive
           })
         })}
         

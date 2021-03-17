@@ -1,11 +1,10 @@
-<svg width="100%" viewBox="0 0 1331 1456" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="100%" viewBox="100 0 1331 1456" fill="none" xmlns="http://www.w3.org/2000/svg">
 <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="58" width="1331" height="1399">
 <path d="M597.355 58.1207H747.863L1330.5 1348.19C868.698 1478.12 497.771 1505.12 0 1348.19L597.355 58.1207Z" fill="#B9B9B9"/>
 </mask>
 <g mask="url(#mask0)">
 <rect x="-0.735504" y="81.9652" width="1412.14" height="1566.28" fill="#7378E7"/>
 <g filter="url(#filter0_d)">
-<g filter="url(#filter1_d)">
 <rect x="489.1" y="906.088" width="108.852" height="90.9069" fill="#E9D2D2"/>
 <path d="M657.111 1063.02C669.794 1110.26 799.45 1194.43 827.542 1155.52C856.272 1130.7 802.287 1089.13 771.528 1070.99C749.637 1046.06 646.58 984.119 625.772 1002.88C604.964 1021.63 635.22 1038.09 657.111 1063.02Z" fill="#121A2E"/>
 <path d="M857.712 1195.36C868.073 1191.37 926.936 1157.67 950.155 1108.8C928.844 1090.36 915.672 1068.7 905.276 1081.03C894.88 1093.36 785.348 1146.63 806.659 1165.07C827.97 1183.51 847.316 1207.69 857.712 1195.36Z" fill="#121A2E"/>
@@ -21,7 +20,7 @@
 <path d="M903.524 1090.17C897.322 1096.91 885.395 1097.99 871.191 1084.57C856.988 1071.15 840.092 1056.38 846.294 1049.65C852.495 1042.91 869.037 1048.32 883.24 1061.74C897.443 1075.16 909.725 1083.43 903.524 1090.17Z" fill="#FFE3E3"/>
 <path d="M864.2 1051.37C864.2 1069.79 853.483 1087.86 827.451 1087.86C801.419 1087.86 771.528 1089.6 771.528 1071.18C771.528 1052.75 792.631 1037.82 818.663 1037.82C844.695 1037.82 864.2 1032.94 864.2 1051.37Z" fill="#FFE3E3"/>
 <path d="M377.357 776.946C377.357 859.895 438.639 927.138 522.565 927.138C606.491 927.138 670.305 859.895 670.305 776.946C670.305 693.998 605.647 653.3 521.721 653.3C437.795 653.3 377.357 693.998 377.357 776.946Z" fill="#FFE3E3"/>
-<path d="M431.732 914.12C444.607 929.176 521.283 949.883 561.178 956.012C600.322 944.377 627.307 950.278 652.379 918.313C652.379 874.315 587.669 855.419 524.285 855.419C460.902 855.419 431.732 870.122 431.732 914.12Z" fill="#FFE3E3"/>
+<path d="M432.5 916C445.374 931.056 523.78 952.263 563.675 958.392C602.819 946.757 626.928 954.465 652 922.5C652 878.501 590.166 857.798 526.782 857.798C463.399 857.798 432.5 872.001 432.5 916Z" fill="#FFE3E3"/>
 <path d="M400.842 850.948L431.732 915.03L652.379 921.736L670.031 850.948H400.842Z" fill="#FFE3E3"/>
 <ellipse cx="662.707" cy="860.774" rx="16.8846" ry="30.0384" fill="#FFE3E3"/>
 <path d="M670.145 757.328C671.08 761.501 657.582 740.696 637.41 743.789C617.238 746.883 601.022 761.501 600.088 757.328C599.153 753.155 613.854 731.772 634.025 728.678C654.197 725.585 669.211 753.155 670.145 757.328Z" fill="#393939"/>
@@ -47,21 +46,11 @@
 <rect x="361.125" y="973.151" width="39.7164" height="482.85" fill="#5A4417"/>
 <rect x="391.5" y="1456" width="30" height="201" transform="rotate(-90 391.5 1456)" fill="#5A4417"/>
 </g>
-</g>
 <rect x="664.147" width="14.7098" height="58.1208" fill="#595656"/>
 <ellipse cx="672.237" cy="146.047" rx="38.9809" ry="29.8055" fill="#FFF7AE"/>
 <path d="M602.366 44.7083H735.489L815.658 146.792H528.817L602.366 44.7083Z" fill="#C4C4C4"/>
 <defs>
-<filter id="filter0_d" x="331.706" y="613.994" width="890.116" height="997.544" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-<feOffset dx="5" dy="4"/>
-<feGaussianBlur stdDeviation="2"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-</filter>
-<filter id="filter1_d" x="327.706" y="613.994" width="705.979" height="859.685" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d" x="327.706" y="613.994" width="705.979" height="859.685" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
 <feOffset dy="10"/>

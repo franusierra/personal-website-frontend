@@ -73,9 +73,14 @@
     color: white;
     justify-content: center;
     align-self: center;
-    h2 {
+    div {
       width: fit-content;
       background-color: rgb(31, 32, 32);
+      span {
+        
+        font-size: inherit;
+        font-weight: inherit;
+      }
     }
     @include small{
         align-self: start;
