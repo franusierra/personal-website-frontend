@@ -2,6 +2,12 @@
   font-family: "YoutubeStar";
   src: url("../../res/fonts/youtube-star.ttf") format("truetype");
 }
+@media(max-width: 500px){
+  .mobile-hidden{
+    display: none;
+  }
+}
+
 .hanging-sign {
   position: relative;
   height: fit-content;
@@ -44,7 +50,7 @@
         font-size: 3em;
       }
 
-      color: rgb(187, 87, 87);
+      color: #d65636;
     }
     p {
       color: #333;
@@ -58,6 +64,40 @@
       line-height: 1.2em;
       margin: 0.5em 0;
     }
+    .about-buttons{
+      
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      padding-top: 16px;
+      div {
+        width: fit-content;
+        border-radius: 4px;
+        padding: 10px;
+        cursor: pointer;
+        color:white;
+        font-size: 0.4em;
+        
+        @media (min-width: 1366px) {
+          font-size: 0.8em;
+        }
+        transition: all 1s;
+      }
+      div:hover{
+        transform: scale(1.1);
+      }
+      .projects-button{
+        background-color: #ef476f;
+      }
+      .resume-button{
+        background-color: #073b4c;
+      }
+      .contact-button{
+        background-color: #90be6d;
+      }
+
+    }
+    
   }
 }
 /* ----------------------------------------------
