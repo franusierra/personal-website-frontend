@@ -25,7 +25,7 @@ const HangingSign=(props) =>{
                             containerId="app">
                                 <div className="mobile-hidden projects-button" >Le projects</div>
                         </Link>
-                        <a href="http://franusi.com/resume.pdf" target="_blank"><div className="resume-button" >Check out my CV</div></a>
+                        <a href="http://franusi.com/resume-en.pdf" target="_blank"><div className="resume-button">Resume</div></a>
                         <Link 
                             activeClass="active"
                             to="contact-section"
@@ -33,7 +33,8 @@ const HangingSign=(props) =>{
                             smooth={true}
                             duration={250}
                             containerId="app">
-                                <div className="contact-button" >Contact me</div>
+                                <div className="contact-button mobile-show" >Contact</div>
+                                <div className="contact-button mobile-hidden" >Contact Me</div>
                         </Link>
                         
                     </div>
