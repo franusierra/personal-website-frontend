@@ -9,6 +9,7 @@ const contactpage=(props)=>{
             <PsychicMe/>
           </div>
           <div className="contact-area">
+            <ContactForm/>
           </div>
         </section>
     )

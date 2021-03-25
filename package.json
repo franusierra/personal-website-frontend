@@ -19,6 +19,7 @@
     "react-gsap": "^2.2.1",
     "react-lottie": "^1.2.3",
     "react-on-screen": "^2.1.1",
+    "react-responsive-carousel": "^3.2.14",
     "react-scripts": "4.0.3",
     "react-scroll": "^1.8.1",
     "react-svg": "^12.0.0",

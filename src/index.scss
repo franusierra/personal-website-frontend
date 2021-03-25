@@ -24,8 +24,9 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
-a {
+a , a:visited{
   text-decoration: none;
+  color: inherit;
 }
 .scroll-animation{
   position: fixed;
