@@ -2,9 +2,21 @@ import React from 'react'
 import './hanging-sign.scss';
 import rope from './rope.png'
 import { Link } from "react-scroll";
-import Projects from '../../pages/projects/projects';
 const HangingSign=(props) =>{
-
+    function getLang() {
+        if (navigator.languages != undefined) 
+          return navigator.languages[0]; 
+        return navigator.language;
+      }
+      const selectResumeLanguage=()=>{
+        const language=getLang()
+        console.log(language)
+        if(language.match(/es.*/)){
+          return "https://franusi.com/resume-es.pdf"
+        }else{
+          return "https://franusi.com/resume-en.pdf"
+        }
+      }
     return (
         <div className={`hanging-sign ${props.isVisible ? "appear":"dissappear"}`}>
             <div className="shake">
@@ -25,7 +37,7 @@ const HangingSign=(props) =>{
                             containerId="app">
                                 <div className="mobile-hidden projects-button" >Le projects</div>
                         </Link>
-                        <a href="http://franusi.com/resume-en.pdf" target="_blank"><div className="resume-button">Resume</div></a>
+                        <a href={selectResumeLanguage()} target="_blank"><div className="resume-button">Resume</div></a>
                         <Link 
                             activeClass="active"
                             to="contact-section"
