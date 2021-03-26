@@ -1,0 +1,82 @@
+.carousel-wrapper{
+    box-sizing: border-box;
+    width: 90vw;
+    @media (min-width: 1000px){
+        width: 45vw;
+    }
+}
+.project-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 10%;
+    font-size: 1.4em;
+    @media (max-width: 800px){
+        font-size: 1em;
+    }
+    
+}
+.project-image{
+    width: 80%;
+}
+.project-title{
+    font-size: 2em;
+    padding: 16px;
+}
+.project-description{
+    padding-bottom: 16px;
+    text-align: justify;
+}
+.project-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    a {
+        background-color: #926AA6;
+        padding: 16px;
+        cursor: pointer;
+    }
+    @media (max-width: 600px){
+        flex-direction: column;
+        a{
+            padding: 6px;
+            margin:8px;
+        }
+        
+        
+    }
+}
+.carousel.carousel-slider .control-arrow{
+    height: fit-content;
+    top: 50%;
+    
+}
+.carousel .control-prev.control-arrow:before {
+    border-right: 16px solid #fff;
+}
+.carousel .control-next.control-arrow:before {
+    border-left: 16px solid #fff;
+}
+.carousel .control-arrow:before, .carousel.carousel-slider .control-arrow:before {
+    margin: 0 8px;
+    display: inline-block;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+}
+@media (max-width: 600px){
+    .carousel .control-prev.control-arrow:before {
+        border-right: 8px solid #fff;
+    }
+    .carousel .control-next.control-arrow:before {
+        border-left: 8px solid #fff;
+    }
+    .carousel .control-arrow:before, .carousel.carousel-slider .control-arrow:before {
+        margin: 0 8px;
+        display: inline-block;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+    }
+}

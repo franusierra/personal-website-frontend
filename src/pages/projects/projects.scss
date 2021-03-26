@@ -13,42 +13,44 @@
   }
   
   @mixin large {
-  @media only screen and (min-width: 1440px) {
+  @media only screen and (min-width: 1000px) {
       @content;
   }
   }
   .projects-section {
-      position:relative;
-      background-color: #333;
-      background-repeat: no-repeat;
-      background-size: cover;
-      display: grid;
-      align-items: center;
-      justify-content: center;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
-      grid-template-areas: "projects";
-      width: 100vw;
-      
-      box-sizing: border-box;
-      @include small {
-          grid-template-areas: "working projects";
-          grid-template-rows: 1fr;
-          grid-template-columns: 1fr 1fr;
-      }
-      @include medium {
-          padding: 0;
-      }
+    display: grid;
+    position:relative;
+    background-color: #333;
+     
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "projects";
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    @include small {
+        padding:0;
+    }
+    @include large {
+        grid-template-areas: "working projects";
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
       
   }
     
     .working-area{
         height: 100%;
         position: absolute;
+        display: none;
         top:0;
         right:0;
         width: 20%;
-        @include small{
+        @include large{
+            display: inline;
             position: relative;
             grid-area: working;
             width: 90%;
@@ -56,15 +58,18 @@
             align-self: center;
         }
     }
-    .contact-area{
+    .projects-area{
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100%;
-        grid-area: contactform;
+        grid-area: projects;
         width: 100%;
         box-sizing: border-box;
-        padding: 10%;
+        padding:0;
+        @include small {
+            padding: 10%;
+        }
         align-self: center;
         justify-self:center;
     }

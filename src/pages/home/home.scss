@@ -70,13 +70,11 @@
   }
   .cooltext {
     grid-area: cooltext;
+    background-color: rgb(31, 32, 32);
     color: white;
     justify-content: center;
-    align-self: center;
-    h2 {
-      width: fit-content;
-      background-color: rgb(31, 32, 32);
-    }
+    align-self: center;  
+    
     @include small{
         align-self: start;
     }
