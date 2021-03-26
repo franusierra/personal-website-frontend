@@ -21,17 +21,14 @@ const Skills=(props)=>{
       image: 'https://avatars.githubusercontent.com/u/7739233?s=200&v=4'
     })
     skillsMock.push({
-      title: 'Python',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/768px-Python-logo-notext.svg.png'
+      title: 'Microservices',
+      image: 'https://hackr.io/tutorials/learn-microservices/logo/logo-microservices?ver=1557508246'
     })
     skillsMock.push({
-      title: 'React.js',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/500px-React-icon.svg.png'
+      title: 'Serverless',
+      image: 'https://miro.medium.com/max/300/1*pD_69wpCMvY4fxAetly_AA.png'
     })
-    skillsMock.push({
-      title: 'Android',
-      image: 'https://cdn.icon-icons.com/icons2/2044/PNG/512/android_logo_icon_124318.png'
-    })
+    
     skillsMock.push({
       title: 'GitHub',
       image: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'
@@ -45,7 +42,18 @@ const Skills=(props)=>{
       title: 'Grafana',
       image: 'https://codigo200.files.wordpress.com/2017/11/grafana-logo-300x300.jpg'
     })
-    
+    skillsMock.push({
+      title: 'Python',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/768px-Python-logo-notext.svg.png'
+    })
+    skillsMock.push({
+      title: 'React.js',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/500px-React-icon.svg.png'
+    })
+    skillsMock.push({
+      title: 'Android',
+      image: 'https://cdn.icon-icons.com/icons2/2044/PNG/512/android_logo_icon_124318.png'
+    })
     
     
     
