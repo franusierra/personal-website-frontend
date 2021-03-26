@@ -70,18 +70,11 @@
   }
   .cooltext {
     grid-area: cooltext;
+    background-color: rgb(31, 32, 32);
     color: white;
     justify-content: center;
-    align-self: center;
-    div {
-      width: fit-content;
-      background-color: rgb(31, 32, 32);
-      span {
-        
-        font-size: inherit;
-        font-weight: inherit;
-      }
-    }
+    align-self: center;  
+    
     @include small{
         align-self: start;
     }

@@ -288,6 +288,8 @@
     transform: translateY(0);
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
+    opacity: 1;
+
   }
 }
 @keyframes bounce-in-top {
@@ -340,5 +342,6 @@
     transform: translateY(0);
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
+    opacity: 1;
   }
 }
