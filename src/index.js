@@ -10,34 +10,43 @@ import Navbar from './components/Navbar/navbar.js';
 import Skills from './pages/skills/skills';
 import Projects from './pages/projects/projects';
 
-
 export default function App() {
   let scrollTimer = useRef(null)
-  const [scroll,setScroll] = useState(false)
-  const [lastSection,setLastSection] =useState(false)
+  let lastSection = useRef(false)
   const [active,setActive]=useState(undefined)
   const startScrollDelay=1000
   const reappearScrollDelay=2000
+  const scrollLottieRef=useRef(null);
+  console.log(scrollLottieRef)
+  const scrollTimeout=() => {
+    console.log(lastSection.current)
+    if(!lastSection.current){
+      if(scrollLottieRef.current){
+        console.log("reproduciendo pero ",lastSection)
+        scrollLottieRef.current.play();
+      }else
+        setTimeout(scrollTimeout,startScrollDelay)
+
+    }
+    
+  }
   const handleScroll=(event)=>{
     
     if(scrollTimer.current){
       clearTimeout(scrollTimer.current)
-      setScroll(false)
+      if(scrollLottieRef.current){
+        scrollLottieRef.current.stop();
+      }
     }
-    scrollTimer.current = setTimeout(() => {
-      setScroll(true)
-    }, startScrollDelay);
+    scrollTimer.current = setTimeout(scrollTimeout,startScrollDelay);
   }
   useEffect(() => {
     window.addEventListener('scroll',handleScroll,true)
-    scrollTimer.current = setTimeout(() => {
-      setScroll(true)
-    }, reappearScrollDelay);
+    scrollTimer.current = setTimeout(scrollTimeout,reappearScrollDelay);
     return () =>{
       window.removeEventListener('scroll', handleScroll);
     }
   },[])
-  
   
   const optionsScroll ={
     loop: true,
@@ -53,7 +62,7 @@ export default function App() {
       content:"home.js"
     },
     {
-      element: <About name="about-section" id="about-section"/>,
+      element: <About name="about-section" id="about-section" />,
       id:"about-section",
       content:"about.sh"
     },
@@ -80,26 +89,27 @@ export default function App() {
           setActive(active)
           if(active===navbarSections.slice(-1)[0].id){
             console.log("last section")
-            setLastSection(true)
+            lastSection.current=true
           }else{
-            setLastSection(false)
+            lastSection.current=false
             console.log("not last section",active)
           }
         }}/>
         
         {navbarSections.map((section)=>{
-          if(section.id===active)
-            return React.cloneElement(section.element,{isActive:true})
-          else
-            return section.element
+          let isActive= (section.id===active)
+          return React.cloneElement(section.element,{
+              isActive:isActive
+          })
         })}
         
         <div className="scroll-animation">
           <Lottie          
+            ref={scrollLottieRef}
             options={optionsScroll}
             width="100%"
             height="100%"
-            isStopped={lastSection||!scroll}
+            isStopped="true"
           />
         </div>
 

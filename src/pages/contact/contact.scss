@@ -23,9 +23,9 @@
     align-items: center;
     justify-content: center;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "contactform";
-    height: 100vh;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "psychic" "contactform";
+    
     width: 100vw;
     
     box-sizing: border-box;
@@ -41,28 +41,34 @@
 }
 
 .psychic-area{
-    position: absolute;
-    top:1%;
-    right:0;
-    padding: 0 10%;
-    width: 20%;
+    position: relative;
+    justify-self: center;
+    align-self: end;
+    padding: 0 0 0 10%;
+    width: 50%;
     @include small{
-        position: relative;
         justify-self: end;
         grid-area: psychic;
+        padding: 0 10%;
         width: 60%;
         align-self: center;
     }
 }
 .contact-area{
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
+
     height: 100%;
     grid-area: contactform;
     width: 100%;
     box-sizing: border-box;
-    padding: 10%;
+    padding:  10%;
+    @include small{
+     padding:20%;
+     align-items: center;
+    }
     align-self: center;
+
     justify-self:center;
 }

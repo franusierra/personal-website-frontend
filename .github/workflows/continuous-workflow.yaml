@@ -24,10 +24,10 @@ jobs:
         run: yarn test
 
       - name: Build
-        run: yarn build
+        run: CI=false yarn build
 
       - name: Share artifact inside workflow
-        if: (github.ref == 'refs/heads/devel' || github.ref == 'refs/heads/master')
+        if: (github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/master')
         uses: actions/upload-artifact@v1
         with:
           name: build
@@ -37,7 +37,7 @@ jobs:
   deploy-dev:
     name: Deploy Develop
     needs: test
-    if: github.ref == 'refs/heads/devel'
+    if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

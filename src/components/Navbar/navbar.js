@@ -12,6 +12,20 @@ export default function Navbar(props) {
   const toggle = () => {
     setToggleState(toggleState === false ? true : false);
   };
+  function getLang() {
+    if (navigator.languages != undefined) 
+      return navigator.languages[0]; 
+    return navigator.language;
+  }
+  const selectResumeLanguage=()=>{
+    const language=getLang()
+    console.log(language)
+    if(language.match(/es.*/)){
+      return "https://franusi.com/resume-es.pdf"
+    }else{
+      return "https://franusi.com/resume-en.pdf"
+    }
+  }
   
   return (
     <header>
@@ -42,17 +56,17 @@ export default function Navbar(props) {
           }
           <ul className="external-icons">
             <li>
-              <a href="https://www.linkedin.com/in/franusi/">
+              <a target="_blank" href="https://www.linkedin.com/in/franusi/">
                 <FontAwesomeIcon icon={faLinkedin}  aria-hidden="true" />
               </a>
             </li>
             <li>
-              <a href="https://github.com/franusierra">
+              <a target="_blank" href="https://github.com/franusierra">
                 <FontAwesomeIcon icon={faGithubSquare} aria-hidden="true" />
               </a>
             </li>
             <li>
-              <a href="https://curriculum.franusi.com">
+              <a target="_blank" href={selectResumeLanguage()}>
                 <ReactSVG  className="curriculum fLink" src={curriculum} />
               </a>
               
