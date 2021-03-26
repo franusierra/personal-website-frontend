@@ -23,7 +23,7 @@ export default function CarouselComponent() {
                     <div className="project-content">
                         <p className="project-description">This website is built on AWS using Terraform for 
                         the Infrastructure and React for the Frontend. Everything, even my own resume is automated with
-                        continuous deployment throuugh github actions </p>
+                        continuous deployment through github actions </p>
                         <div className="project-buttons">
                             <a target="_blank" href="https://github.com/franusierra/personal-website-frontend">Frontend</a>
                             <a target="_blank" href="https://github.com/franusierra/personal-website-infraestructure">Infrastructure</a>
