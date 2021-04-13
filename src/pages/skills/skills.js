@@ -1,6 +1,7 @@
 import React from 'react'
 import './skills.scss';
 import SkillWidget from '../../components/SkillWidget/skill-widget';
+import androidImg from './android.png';
 
 const Skills=(props)=>{
     const skillsMock=[];
@@ -52,12 +53,8 @@ const Skills=(props)=>{
     })
     skillsMock.push({
       title: 'Android',
-      image: 'https://cdn.icon-icons.com/icons2/2044/PNG/512/android_logo_icon_124318.png'
+      image: androidImg 
     })
-    
-    
-    
-    
     return (
         <section id={props.id} className="skills-section" >
          
